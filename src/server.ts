@@ -1,0 +1,16 @@
+import Fastify from 'fastify';
+import dotenv from 'dotenv';
+import {DetektorRoutes} from "../Routes/Routes.js";
+dotenv.config();
+const server = Fastify({
+    logger: true
+});
+
+server.register(DetektorRoutes);
+
+server.listen({port: Number(process.env.PORT), host: '0.0.0.0'}, err=>{
+    if(err){
+        server.log.error(err);
+        process.exit(1);
+    }
+})
