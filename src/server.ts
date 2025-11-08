@@ -1,6 +1,6 @@
 import Fastify from 'fastify';
 import dotenv from 'dotenv';
-import {DetektorRoutes} from "../Routes/Routes.js";
+import {DetektorRoutes} from "./Routes/Routes.ts";
 dotenv.config();
 const server = Fastify({
     logger: true
