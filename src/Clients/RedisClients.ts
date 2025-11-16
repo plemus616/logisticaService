@@ -8,5 +8,6 @@ try{
     await redisClient.connect();
     console.log("Conectado a redis")
 } catch (err){
-    console.error(`Error de conexion en redis ${err}`)
+    console.error(`Error de conexion en redis ${err}`);
+    throw err;
 }
